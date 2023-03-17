@@ -12,6 +12,9 @@ int main(void)
 		if (c == 'e' && c == 'q')
 		{
 			continue;
+		}
+		else
+		{
 			putchar(c);
 		}
 	}
