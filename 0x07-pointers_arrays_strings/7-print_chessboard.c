@@ -1,7 +1,8 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_chessboard - function that prints the chessboard.
- * @a: 2-dimesional array of a[8][8] dimesions
+ * @a: 2-dimesional array of a[8][8] dimensions
  * Return: void
  */
 
