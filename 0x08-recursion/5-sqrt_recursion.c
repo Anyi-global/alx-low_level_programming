@@ -1,0 +1,24 @@
+#include "main.h"
+/**
+ * _sqrt_recursion - a function that computes sqrt of a number recursively
+ * @n: the number to be square rooted
+ * Return: the sqrt of the given number
+ */
+
+int checker(int n, int base)
+{
+	if (n * n == base)
+		return (n);
+	if (n * n > base)
+		return (-1);
+	return (checker(n + 1, base));
+}
+/**
+ * _sqrt_recursion - return the natural square root of a number n.
+ * @n: number to check for square roots.
+ * Return: the natural square root of number n
+ */
+int _sqrt_recursion(int n)
+{
+	return (checker(1, n));
+}
