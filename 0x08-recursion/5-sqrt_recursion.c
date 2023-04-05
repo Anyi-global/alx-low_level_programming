@@ -1,17 +1,10 @@
 #include "main.h"
 /**
- * _sqrt_recursion - a function that computes sqrt of a number recursively
- * @n: the number to be square rooted
- * Return: the sqrt of the given number
- */
-
-/**
  * checker - checks the input number from n to the base
  * @n: number is squared and compared against base
  * @base: base number to check
  * Return: natural square root of number base
  */
-
 int checker(int n, int base)
 {
 	if (n * n == base)
