@@ -10,6 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int cents, quarters, dimes, nickels, pennies;
+	int quartz, quartile;
 
 	if (argc != 2)
 	{
@@ -34,10 +35,15 @@ int main(int argc, char *argv[])
 	nickels = cents / 5;
 	cents %= 5;
 
+	quartz = cents / 2;
+	cents %= 2;
+
+	quartile = cents / 1;
+	cents %= 1;
+
 	pennies = cents;
 
-	printf("%d\n", quarters + dimes + nickels + pennies);
+	printf("%d\n", quarters + dimes + nickels + pennies + quartz + quartile);
 
 	return (0);
 }
-
