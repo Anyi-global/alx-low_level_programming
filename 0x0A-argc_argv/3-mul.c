@@ -9,12 +9,15 @@
 
 int main(int argc, char *argv[])
 {
-	int mul = 1;
+	int mul = 1, res1 = 0, res2 = 0;
 
 	if (argc > 1)
 	{
-		mul = atoi(argv[1]) * atoi(argv[2]);
+		res1 = atoi(argv[1]);
+		res2 = atoi(argv[2]);
+		mul = res1 * res2;
 		printf("%d\n", mul);
+		return (0);
 	}
 	else
 	{
