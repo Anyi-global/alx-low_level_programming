@@ -60,7 +60,7 @@ char **strtow(char *str)
 	for (i = 0, wordlen = 0; i < wc; i++)
 	{
 		/* Allocate memory for nested elements */
-		wordlen = wordcounter(str, i, 0);
+		wordlen = wordcounter(str, i + 1, 0);
 		if (i == 0 && str[i] != ' ')
 			wordlen++;
 		p[i] = malloc((wordlen + 1) * sizeof(char));
