@@ -9,18 +9,17 @@
  * Return: a pointer to the memory space to hold the string
  */
 
-char *string_nconcat(char *s1, char *s2, unsigned int n)
-{
+char *string_nconcat(char *s1, char *s2, unsigned int n){
 	char *ptr;
 	unsigned int s1_len, s2_len, ptr_len;
 
 	if (s1 == NULL)
 	{
-		s1 = " ";
+		s1 = "";
 	}
 	if (s2 == NULL)
 	{
-		s2 = " ";
+		s2 = "";
 	}
 
 	s1_len = strlen(s1);
