@@ -1,44 +1,32 @@
 #include <stdlib.h>
-#include <string.h>
-#include "main.h"
+#include <stdio.h>
 /**
- * string_nconcat - a function that concatenates two strings
- * @s1: the first string to be concatenated
- * @s2: the secod string to be concatenated
- * @n: n number of bytes of s2 to be appended to s1
- * Return: a pointer to the memory space to hold the string
+ * string_nconcat - concatenate two strings up to n bytes.
+ * @s1: source string
+ * @s2: string to truncate up to n bytes
+ * @n: number of bytes to truncate by
+ * Return: pointer to new buffer
  */
-
-char *string_nconcat(char *s1, char *s2, unsigned int n){
-	char *ptr;	
-	unsigned int s1_len, s2_len, ptr_len;
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	char *p;
+	unsigned int s1count, s2count, sizeBuffer, i;
 
 	if (s1 == NULL)
-	{
 		s1 = "";
-	}
 	if (s2 == NULL)
-	{
 		s2 = "";
-	}
-
-	s1_len = strlen(s1);
-	s2_len = strlen(s2);
-
-	if (n >= s2_len)
-	{
-		n = s2_len;
-	}
-	ptr_len = s1_len + n + 1;
-	ptr = malloc(ptr_len);
-
-	if (ptr == NULL)
-	{
+	for (s1count = 0; s1[s1count]; s1count++)
+		;
+	for (s2count = 0; s2[s2count]; s2count++)
+		;
+	s2count > n ? (s2count = n) : (n = s2count);
+	sizeBuffer = s1count + s2count + 1;
+	p = malloc(sizeBuffer * sizeof(char));
+	if (p == NULL)
 		return (NULL);
-	}
-	strncpy(ptr, s1, s1_len);
-	strncat(ptr, s2, n);
-
-	ptr[ptr_len - 1] = '\0';
-	return (ptr);
+	for (i = 0; i < sizeBuffer - 1; i++)
+		i < s1count ? (p[i] = s1[i]) : (p[i] = s2[i - s1count]);
+	p[sizeBuffer] = '\0';
+	return (p);
 }
