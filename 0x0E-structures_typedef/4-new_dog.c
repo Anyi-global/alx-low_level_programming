@@ -7,7 +7,7 @@
  * @age: age of the new dog
  * @owner: owner of the new dog
  *
- * Description: a new structure of dog type that holds the elements of the new dog
+ * Return: pointer to the new allocated space
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
