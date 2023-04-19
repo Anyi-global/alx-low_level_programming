@@ -23,7 +23,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 		digit = cmp(array[elem]);
 		if (digit != 0)
 		{
-			return (elem); 
+			return (elem);
 		}
 	}
 	return (-1);
