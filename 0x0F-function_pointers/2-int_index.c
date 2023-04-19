@@ -14,7 +14,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	int elem;
 	int digit;
 
-	if (size <= 0)
+	if (size <= 0 || !(array) || !(cmp))
 	{
 		return (-1);
 	}
