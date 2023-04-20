@@ -12,58 +12,44 @@
 
 void print_all(const char * const format, ...)
 {
-	va_list pa;
-	const char *p = format;
-	char c;
-	int i;
-	float f;
-	char *s;
-	int printed;
+	int i = 0;
+	char *str, *sep = "";
 
-	va_start(pa, format);
+	va_list args;
 
-	printed = 0;
+	va_start(args, format);
 
-	while (*p != '\0')
+	if (format)
 	{
-		switch (*p)
+		while (format[i])
 		{
-			case 'c':
-				c = (char) va_arg(pa, int);
-				printf("%c", c);
-				printed = 1;
-				break;
-			case 'i':
-				i = va_arg(pa, int);
-				printf("%d", i);
-				printed = 1;
-				break;
-			case 'f':
-				f = (float) va_arg(pa, double);
-				printf("%f", f);
-				printed = 1;
-				break;
-			case 's':
-				s = va_arg(pa, char *);
-				if (s == NULL)
-				{
-					printf("(nil)");
-				}
-				else
-				{
-					printf("%s", s);
-				}
-				printed = 1;
-				break;
+			switch (format[i])
+			{
+				case 'c':
+					printf("%s%c", sep, va_arg(args, int));
+					break;
+				case 'i':
+					printf("%s%d", sep, va_arg(args, int));
+					break;
+				case 'f':
+					printf("%s%f", sep, va_arg(args,
+								double));
+					break;
+				case 's':
+					str = va_arg(args, char *);
+					if (!str)
+						str = "(nil)";
+					printf("%s%s", sep, str);
+					break;
+				default:
+					i++;
+					continue;
+			}
+			sep = ", ";
+			i++;
 		}
-		if (*(p + 1) != '\0' && printed)
-		{
-			printf(", ");
-			printed = 0;
-		}
-		p++;
 	}
-	va_end(pa);
 
 	printf("\n");
+	va_end(args);
 }
