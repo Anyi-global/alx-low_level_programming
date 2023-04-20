@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(1);
+		return (1);
 	}
 
 	nbytes = atoi(argv[1]);
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	if (nbytes < 0)
 	{
 		printf("Error\n");
-		exit(2);
+		return (2);
 	}
 
 	address = (char *)&main;
