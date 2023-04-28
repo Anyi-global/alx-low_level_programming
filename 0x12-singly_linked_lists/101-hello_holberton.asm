@@ -6,13 +6,13 @@ main:
 	push rbp
 	mov rbp, rsp
 
-	lea rdi, [fmt]
+	mov edi, fmt
 	xor eax, eax
 	call printf
 
 	mov rsp, rbp
 	pop rbp
-	xor eax, eax
+	mov eax, 0
 	ret
 
 section .data
