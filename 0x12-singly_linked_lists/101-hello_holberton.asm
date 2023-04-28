@@ -10,4 +10,4 @@ main:
 	ret
 
 section .data
-	fmt: db "Hello, Holberton!", 10, 0
+	fmt: db "Hello, Holberton", 10, 0
