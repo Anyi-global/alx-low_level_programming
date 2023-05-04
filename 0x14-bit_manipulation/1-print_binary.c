@@ -8,19 +8,9 @@
 
 void print_binary(unsigned long int n)
 {
-	int shift;
-	int i;
-
-	shift = sizeof(unsigned long int) * 8 - 1;
-	for (i = shift; i >= 0; i--)
+	if (n > 1)
 	{
-		if ((n >> i) & 1)
-		{
-			printf("1");
-		}
-		else
-		{
-			printf("0");
-		}
+		print_binary(n >> 1);
 	}
+	_putchar((n & 1) + '0');
 }
