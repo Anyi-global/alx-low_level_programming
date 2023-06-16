@@ -4,22 +4,22 @@
 
 /**
  * print_dlistint - function that prints all the elements of a dlistint_t list
- * @h: the head of the node
+ * @h: the head node
  *
- * Return: returns the total number of nodes
+ * Return: function that prints all the elements of a dlistint_t list
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-		size_t count;
-		const dlistint_t *current;
+	size_t count;
+	const dlistint_t *current;
 
-		count = 0;
-		current = h;
-		while (current != NULL)
-		{
-				printf("%d\n", current->n);
-				count++;
-				current = current->next;
-		}
-		return (count);
+	count = 0;
+	current = h;
+	while (current != NULL)
+	{
+		printf("%d\n", current->n);
+		count++;
+		current = current->next;
+	}
+	return (count);
 }
