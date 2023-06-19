@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc *.o -fPIC -shared -o libtest.so
-LD_PRELOAD=$PWD/libtest.so
+wget -P /tmp https://github.com/Anyi-global/alx-low_level_programming/tree/master/0x18-dynamic_libraries/libtest.so
+export LD_PRELOAD=/tmp/libtest.so
